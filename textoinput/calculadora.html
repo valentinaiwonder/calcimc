@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" href="assets/css/calculadora.css">
+</head>
+
+<body>
+    <header>
+        <h1> Calculadora de IMC </h1>
+    </header>
+    <main>
+        <div class="banner">
+            <div class="principal">
+                <div class="pesoo">
+                    <label for="inputAltura">Digite sua altura em metros: </label>
+                    <input type="number" id="inputAltura">
+                </div>
+                <div class="alturaa">
+                    <label for="inputPeso">Digite seu peso em quilogramas: </label>
+                    <input type="number" id="inputPeso">
+                    <button id="botaoEnviar">Calcular</button>
+                    <p id="resultadoIMC"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        //função : bloco de codigo utilizavel 
+        function exibirIMC() {
+            var altura = document.getElementById("inputAltura") //document: o html é um documento 
+            // e chama o elemnto de fora pelo id 
+            var peso = document.getElementById("inputPeso")
+
+            if (isNaN(altura.value) || isNaN(peso.value) || altura <= 0 || peso <= 0) {
+                document.getElementById("resultadoIMC").textContent = "Por favor, insira valores válidos para peso e altura.";
+                return;
+            }
+
+            peso = parseFloat(peso.value)
+            altura = parseFloat(altura.value)
+            var calculoIMC = peso / (altura * altura)
+            var mensagemResultado = "Seu IMC é " + calculoIMC.toFixed(3) + ". "
+
+            if (calculoIMC < 18.5)
+                mensagemResultado += ("Você está abaixo do peso. Consuma alimentos ricos em calorias e nutrientes e adote atividades como musculação que pode ajudar a ganhar peso de forma saudável."
+                )
+            else if (calculoIMC > 18.5 && calculoIMC < 24.9)
+                mensagemResultado += ("Você está com o peso normal. Mantenha uma dieta equilibrada, faça exercícios regulares e continue se hidratando adequadamente.")
+            else if (calculoIMC > 25 && calculoIMC < 29.9)
+                mensagemResultado += ("Você está com sobrepeso. Reduza as porções, aumente a atividade física e evite alimentos processados e ricos em açúcar.")
+            else if (calculoIMC > 30)
+                mensagemResultado += ("Você está com obesidade. Adote uma dieta saudável, comece atividades físicas leves e busque orientação de um profissional para emagrecer com segurança.")
+
+            document.getElementById("resultadoIMC").textContent = mensagemResultado;
+        }
+
+        var botao = document.getElementById("botaoEnviar") // chama de novo o botao 
+        botao.addEventListener('click', exibirIMC) // e o adiciona ao esperador de evento com ação (clicar) 
+        // e reação que criamos (exibirIMC)
+    </script>
+    <footer>
+        <p> Todos os direitos reservados. 2024. </p>
+    </footer>
+</body>
+
+</html>

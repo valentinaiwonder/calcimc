@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    transition: all 0.3s;
+    font-family: var(--fonteum);
+}
+
+:root {
+  --fonteum: font-family: "Roboto Slab", serif;
+}
+header {
+    background-color: #607d4e;
+    
+}
+h1 {
+    color:white;
+    display: flex;
+    padding-left: 70px;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+.banner {
+    height: 100vh;
+    background-image:url('../img/fundo3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    display: flex;
+    padding-left: 400px;
+}
+
+
+.principal {
+    background-color: #b5805c;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 400px;
+    font-size: 25px;
+    border-radius: 10%;
+    align-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.pesoo {
+    background-color: #607d4e;
+    color:white;
+    margin-bottom: 5px;
+    border-radius: 5%;
+}
+
+.alturaa {
+    background-color: #607d4e;
+    color:white;
+    margin-bottom: 5px;
+    border-radius: 5%;
+}
+
+footer {
+    background-color: #607d4e;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
